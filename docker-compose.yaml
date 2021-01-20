@@ -1,0 +1,12 @@
+version: '3'
+services:
+  currency:
+    build: .
+    image: currency:latest
+    container_name: currency
+    env_file:
+      - ./values.env
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
